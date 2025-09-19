@@ -104,7 +104,7 @@
                         alt="user avatar">
                     <div class="user-info">
                         <p class="user-name mb-0">{{ auth()->user()->name }}</p>
-                        <p class="designattion mb-0">{{ auth()->user()->role }}</p>
+                        <p class="designattion mb-0">{{ auth()->user()->getRoleNames()->first() }}</p>
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
