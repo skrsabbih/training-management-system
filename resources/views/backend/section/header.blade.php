@@ -17,6 +17,23 @@
                         </a>
                     </li>
 
+                    <li class="nav-item dropdown dropdown-laungauge d-none d-sm-flex">
+                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="avascript:;"
+                            data-bs-toggle="dropdown"><img src="{{asset('backend/assets/images/county/02.png')}}" width="22" alt="">
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img
+                                        src="{{ asset('backend/assets/images/county/02.png') }}" width="20" alt=""><span
+                                        class="ms-2">English</span></a>
+                            </li>
+                            <li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img
+                                        src="{{asset('backend/assets/images/county/09.png')}}" width="20" alt=""><span
+                                        class="ms-2">Bangla</span></a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+
                     <li class="nav-item dark-mode d-none d-sm-flex">
                         <a class="nav-link dark-mode-icon" href="javascript:;"><i class='bx bx-moon'></i>
                         </a>
@@ -74,8 +91,8 @@
                                     <div class="d-flex align-items-center gap-3">
                                         <div class="position-relative">
                                             <div class="cart-product rounded-circle bg-light">
-                                                <img src="{{ asset('backend/assets/images/products/11.png') }}"
-                                                    class="" alt="product image">
+                                                <img src="{{ asset('backend/assets/images/products/11.png') }}" class=""
+                                                    alt="product image">
                                             </div>
                                         </div>
                                         <div class="flex-grow-1">
@@ -98,8 +115,8 @@
                 </ul>
             </div>
             <div class="user-box dropdown px-3">
-                <a class="d-flex align-items-center nav-link dropdown-toggle gap-3 dropdown-toggle-nocaret"
-                    href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="d-flex align-items-center nav-link dropdown-toggle gap-3 dropdown-toggle-nocaret" href="#"
+                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="{{ asset('backend/assets/images/avatars/avatar-2.png') }}" class="user-img"
                         alt="user avatar">
                     <div class="user-info">
