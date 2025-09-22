@@ -22,7 +22,9 @@ class AdminPermissionController extends Controller
      */
     public function create()
     {
-        return view('backend.admin.user_management.permission.create');
+        // permission create with module like User Management etc.
+        $modules = Permission::whereNull('parent_id')->get();
+        return view('backend.admin.user_management.permission.create', compact('modules'));
     }
 
     /**
@@ -32,11 +34,13 @@ class AdminPermissionController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255|unique:permissions,name',
+            'parent_id' => 'nullable|exists:permissions,id',
         ]);
 
         Permission::create([
             'name' => $request->name,
             'guard_name' => 'web',
+            'parent_id' => $request->parent_id,
         ]);
 
         return redirect()->route('admin.permissions.index')->with('success', 'Permission created successfully!');
@@ -57,7 +61,8 @@ class AdminPermissionController extends Controller
     public function edit(string $id)
     {
         $permission = Permission::findOrFail($id);
-        return view('backend.admin.user_management.permission.edit', compact('permission'));
+        $modules = Permission::whereNull('parent_id')->where('id', '!=', $permission->id)->get();
+        return view('backend.admin.user_management.permission.edit', compact('permission', 'modules'));
     }
 
     /**
@@ -69,10 +74,12 @@ class AdminPermissionController extends Controller
 
         $request->validate([
             'name' => 'required|string|max:255|unique:permissions,name,' . $permission->id,
+            'parent_id' => 'nullable|exists:permissions,id',
         ]);
 
         $permission->update([
             'name' => $request->name,
+            'parent_id' => $request->parent_id,
         ]);
 
         return redirect()->route('admin.permissions.index')->with('success', 'Permission updated successfully!');

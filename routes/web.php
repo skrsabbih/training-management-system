@@ -4,6 +4,7 @@
 use App\Http\Controllers\backend\AdminController;
 use App\Http\Controllers\backend\AdminPermissionController;
 use App\Http\Controllers\backend\AdminProfileController;
+use App\Http\Controllers\backend\AdminRoleController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,17 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->name('ad
         Route::get('/{id}/edit', [AdminPermissionController::class, 'edit'])->name('edit');
         Route::put('/{id}', [AdminPermissionController::class, 'update'])->name('update');
         Route::delete('/{id}', [AdminPermissionController::class, 'destroy'])->name('destroy');
+    });
+
+    /* User Management - Role */
+    Route::prefix('roles')->name('roles.')->group(function () {
+        Route::get('/', [AdminRoleController::class, 'index'])->name('index');
+        Route::get('/create', [AdminRoleController::class, 'create'])->name('create');
+        Route::post('/', [AdminRoleController::class, 'store'])->name('store');
+        Route::get('/{id}', [AdminRoleController::class, 'show'])->name('show');
+        Route::get('/{id}/edit', [AdminRoleController::class, 'edit'])->name('edit');
+        Route::put('/{id}', [AdminRoleController::class, 'update'])->name('update');
+        Route::delete('/{id}', [AdminRoleController::class, 'destroy'])->name('destroy');
     });
 });
 

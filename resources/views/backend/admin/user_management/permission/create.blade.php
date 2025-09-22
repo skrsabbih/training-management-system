@@ -10,7 +10,8 @@
                 <form action="{{ route('admin.permissions.store') }}" method="POST">
                     @csrf
                     <div class="row mb-3">
-                        <label for="permission_name" class="col-sm-3 col-form-label">Permission Title <span style="color:red">*</span></label>
+                        <label for="permission_name" class="col-sm-3 col-form-label">Permission Title <span
+                                style="color:red">*</span></label>
                         <div class="col-sm-9">
                             <div class="position-relative input-icon">
                                 <input type="text" class="form-control @error('name') is-invalid @enderror"
@@ -24,6 +25,19 @@
                                     </span>
                                 @enderror
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="permission_name" class="col-sm-3 col-form-label">Assign Module
+                        </label>
+                        <div class="col-sm-9">
+                            <select class="form-select" id="single-select-clear-field" name="parent_id" data-placeholder="Choose Module">
+                                @foreach ($modules as $module)
+                                <option></option>
+                                <option value="{{ $module->id }}">{{ $module->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
 

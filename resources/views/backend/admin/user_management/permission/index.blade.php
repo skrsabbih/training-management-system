@@ -9,7 +9,7 @@
             </a>
         </div>
 
-        <h6 class="mb-1 text-uppercase text-center fw-bold" style="color:#FF6B6B;">
+        <h6 class="mb-1 text-uppercase">
             Permission List
         </h6>
         <hr />

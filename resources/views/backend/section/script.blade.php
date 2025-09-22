@@ -12,6 +12,7 @@
 <script src="{{ asset('backend/assets/js/index.js') }}"></script>
 <script src="{{ asset('backend/assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('backend/assets/plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
+<script src="{{ asset('backend/assets/plugins/select2/js/select2-custom.js') }}"></script>
 
 <!--Password show & hide js -->
 <script>
@@ -85,3 +86,4 @@
 </script>
 <!--app JS-->
 <script src="{{ asset('backend/assets/js/app.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>

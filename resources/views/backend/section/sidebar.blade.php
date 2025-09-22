@@ -33,7 +33,7 @@
                         href="{{ route('admin.permissions.index') }}"><i class='bx bx-shield-quarter'
                             style="color:#FF6B6B;"></i>Permissions</a>
                 </li>
-                <li> <a href="app-chat-box.html"><i class='bx bx-id-card' style="color:#4ECDC4;"></i>Roles</a>
+                <li class="{{ request()->routeIs('admin.roles.*') ? 'mm-active' : '' }}"> <a href="{{route('admin.roles.index')}}"><i class='bx bx-id-card' style="color:#4ECDC4;"></i>Roles</a>
                 </li>
                 <li> <a href="app-file-manager.html"><i class='bx bx-user' style="color:#FF9F43;"></i>Users</a>
                 </li>
